@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/grade_post_sys?serverTimezone=UTC&useAffectedRows=true
+      username: root
+      password: zx.20020801
+
+server:
+  port: 8081
+  servlet:
+    session:
+      timeout: 7200
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
