@@ -78,7 +78,7 @@ public class IManagerServiceImpl extends ServiceImpl<ManagerDao,Manager> impleme
     public boolean deleteStu(Student student) {
         LambdaUpdateWrapper<Grade> lqw = new LambdaUpdateWrapper<Grade>().eq(Grade::getS_id,student.getS_id());
         gradeDao.delete(lqw);
-        return studentDao.deleteById(student) > 0;
+        return studentDao.deleteById(student.getS_id()) > 0;
     }
 
     @Override
@@ -112,7 +112,7 @@ public class IManagerServiceImpl extends ServiceImpl<ManagerDao,Manager> impleme
             deleteCou(course);
         }
         courseDao.delete(lqw);
-        return teacherDao.deleteById(teacher) > 0;
+        return teacherDao.deleteById(teacher.getT_id()) > 0;
     }
 
     @Override
@@ -142,7 +142,7 @@ public class IManagerServiceImpl extends ServiceImpl<ManagerDao,Manager> impleme
     public boolean deleteCou(Course course) {
         LambdaUpdateWrapper<Grade> lqw = new LambdaUpdateWrapper<Grade>().eq(Grade::getC_id,course.getC_id());
         gradeDao.delete(lqw);
-        return courseDao.deleteById(course) > 0;
+        return courseDao.deleteById(course.getT_id()) > 0;
     }
 
     @Override
