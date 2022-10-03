@@ -2,7 +2,7 @@ spring:
   datasource:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/grade_post_sys?serverTimezone=UTC&useAffectedRows=true
+      url: jdbc:mysql://localhost:3306/grade_post_sys?serverTimezone=UTC&useAffectedRows=true&useSSL=false
       username: root
       password: zx.20020801
 
